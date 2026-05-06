@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Data Bistro</title>
+
+  <!--
+    CONNECTION POINT 1 — HTML → CSS
+    This <link> tag is how the browser finds style.css.
+    The href must match the filename exactly.
+    If it's wrong (e.g. "styles.css"), NONE of the CSS loads.
+  -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>The Data Bistro</h1>
+    <p class="tagline">Where every dish tells a story</p>
+  </header>
+
+  <main>
+
+    <section class="menu">
+      <h2>Today's Menu</h2>
+
+      <!--
+        Each dish card uses class="menu-item".
+        In style.css, the selector ".menu-item" targets these divs.
+        If the class name here and in the CSS don't match, the card gets no styling.
+      -->
+      <div class="menu-item">
+        <h3>HTML Bruschetta <span class="badge">Starter</span></h3>
+        <p class="description">The foundation of every great meal. Structure and content, simply arranged.</p>
+        <span class="price">$8</span>
+        <!-- data-price is read by script.js to know how much to add -->
+        <button class="add-btn" data-price="8">+ Add to Order</button>
+      </div>
+
+      <div class="menu-item">
+        <h3>CSS Risotto <span class="badge">Main</span></h3>
+        <p class="description">Elegantly styled, perfectly presented. Makes everything look delicious.</p>
+        <span class="price">$14</span>
+        <button class="add-btn" data-price="14">+ Add to Order</button>
+      </div>
+
+      <div class="menu-item">
+        <h3>JavaScript Soufflé <span class="badge">Main</span></h3>
+        <p class="description">Interactive and dynamic. Reacts to your every move — but only if conditions are right.</p>
+        <span class="price">$12</span>
+        <button class="add-btn" data-price="12">+ Add to Order</button>
+      </div>
+
+      <div class="menu-item">
+        <h3>D3.js Crème Brûlée <span class="badge">Dessert</span></h3>
+        <p class="description">A rich, data-driven visualization with a satisfying interactive crust.</p>
+        <span class="price">$10</span>
+        <button class="add-btn" data-price="10">+ Add to Order</button>
+      </div>
+    </section>
+
+    <aside class="order-panel">
+      <h2>Your Order</h2>
+      <p>Items added: <strong id="item-count">0</strong></p>
+      <!--
+        id="order-total" is how script.js finds this element.
+        In script.js: document.getElementById('order-total')
+        If that ID doesn't match exactly, JS can't update the total.
+      -->
+      <p class="total-line">Total: $<strong id="order-total">0</strong></p>
+      <!--
+        id="clear-btn" is how script.js finds this button.
+        In script.js: document.getElementById('clear-btn')
+      -->
+      <button id="clear-btn">Clear Order</button>
+      <hr>
+      <p class="note">Click the buttons on the left to add items!</p>
+    </aside>
+
+  </main>
+
+  <!--
+    CONNECTION POINT 2 — HTML → JavaScript
+    This <script> tag is how the browser finds script.js.
+    It goes at the bottom so all the HTML elements above exist
+    before script.js tries to find them.
+    If src is wrong, or this line is missing, NONE of the JS runs.
+  -->
+  <script src="script.js"></script>
+
+</body>
+</html>
