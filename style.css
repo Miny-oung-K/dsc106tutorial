@@ -131,14 +131,8 @@ body {
 
 .pv-img {
   display: block;
-  width: 110px;
-  height: 55px;
-  background: #e0e0e0;
-  line-height: 55px;
-  text-align: center;
-  font-family: monospace;
-  font-size: 0.68rem;
-  color: #999;
+  max-width: 100%;
+  height: auto;
   margin: 0.4em 0;
 }
 
